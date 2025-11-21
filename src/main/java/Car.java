@@ -2,6 +2,16 @@ public class Car {
     private String name;
     private int speed;
 
+    private int KM;
+
+    public int getKM() {
+        return KM;
+    }
+
+    public void setKM(int KM) {
+        this.KM = KM;
+    }
+
     public Car(String name, int speed) {
         this.name = name;
         this.speed = speed;
