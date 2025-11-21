@@ -1,43 +1,34 @@
 public class Car {
-    private String name;
-    private int speed;
+    private final String NAME;
+    private final int SPEED;
 
-    private int KM;
+    private int km;
 
-    public int getKM() {
-        return KM;
+    public int getKm() {
+        return km;
     }
 
-    public void setKM(int KM) {
-        this.KM = KM;
+    public void setKm(int km) {
+        this.km = km;
     }
 
     public Car(String name, int speed) {
-        this.name = name;
-        this.speed = speed;
+        this.NAME = name;
+        this.SPEED = speed;
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public int getSPEED() {
+        return SPEED;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "name='" + name + '\'' +
-                ", speed=" + speed +
+                "name='" + NAME + '\'' +
+                ", speed=" + SPEED +
                 '}';
     }
 }
