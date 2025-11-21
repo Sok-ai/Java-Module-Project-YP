@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Race {
     public static void startRace() {
-        Scanner scanner = new Scanner(System.in);
         ArrayList<Car> cars = new ArrayList<>();
         System.out.println("Добро пожаловать на гонки! Требуется ввести 3 автомобиля.");
 
