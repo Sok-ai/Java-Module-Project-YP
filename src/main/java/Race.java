@@ -8,24 +8,44 @@ public class Race {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Car> cars = new ArrayList<>();
         System.out.println("Добро пожаловать на гонки! Требуется ввести 3 автомобиля.");
-        int speed;
 
         for (int i = 1; i < 4; i++) {
-            System.out.println("-----------------------");
+            System.out.println("=======================");
             System.out.println("Введите название для " + i + " автомобиля");
-            System.out.print("Название: ");
-            String name = scanner.next();
-            speed = requestSpeed();
 
+            String name = requestName();
+            int speed = requestSpeed();
             Car car = new Car(name, speed);
+
             cars.add(car);
         }
 
         countResults(cars);
     }
 
+    private static boolean checkCorrectName(String name) {
+        return name.isBlank();
+    }
+
     private static boolean checkCorrectSpeed(int speed) {
         return speed < 0 || speed > 250;
+    }
+
+    private static String requestName() {
+        Scanner scanner = new Scanner(System.in);
+        String name;
+        System.out.print("Название: ");
+        name = scanner.nextLine();
+        while (true) {
+            if (checkCorrectName(name)) {
+                System.out.println("Введена пустая строка. Повторите снова!");
+                System.out.print("Повторный ввод названия: ");
+                name = scanner.nextLine();
+            } else {
+                break;
+            }
+        }
+        return name;
     }
 
     private static int requestSpeed() {
