@@ -4,6 +4,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Race {
+    private final static int MAX_SPEED = 250;
+    private final static int MIN_SPEED = 0;
+    private final static Scanner SCANNER = new Scanner(System.in);
+    private static Car winner = new Car("", -1);
+
     public static void startRace() {
         ArrayList<Car> cars = new ArrayList<>();
         System.out.println("Добро пожаловать на гонки! Требуется ввести 3 автомобиля.");
