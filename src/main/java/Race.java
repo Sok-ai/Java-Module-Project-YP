@@ -36,15 +36,14 @@ public class Race {
     }
 
     private static String requestName() {
-        Scanner scanner = new Scanner(System.in);
         String name;
         System.out.print("Название: ");
-        name = scanner.nextLine();
+        name = SCANNER.nextLine();
         while (true) {
             if (checkCorrectName(name)) {
                 System.out.println("Введена пустая строка. Повторите снова!");
                 System.out.print("Повторный ввод названия: ");
-                name = scanner.nextLine();
+                name = SCANNER.nextLine();
             } else {
                 break;
             }
@@ -53,17 +52,17 @@ public class Race {
     }
 
     private static int requestSpeed() {
-        Scanner scanner = new Scanner(System.in);
-        int speed = 0;
+        int speed;
         System.out.println("Введите скорость");
         System.out.print("Cкорость (целое число от 0 до 250): ");
         try {
-            speed = scanner.nextInt();
+            speed = SCANNER.nextInt();
+            SCANNER.nextLine();
             while (true) {
                 if (checkCorrectSpeed(speed)) {
                     System.out.println("Введена не верная скорость. Диапазон от 0 до 250");
                     System.out.print("Новое значение скорости: ");
-                    speed = scanner.nextInt();
+                    speed = SCANNER.nextInt();
                 } else {
                     break;
                 }
@@ -71,8 +70,10 @@ public class Race {
         } catch (InputMismatchException e) {
             System.out.println("ОШИБКА: Скорость не может быть буквой или дробью");
             System.out.println("-----------------");
-            requestSpeed();
+            SCANNER.nextLine();
+            speed = requestSpeed();
         }
+
         return speed;
     }
 
