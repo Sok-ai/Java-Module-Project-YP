@@ -15,6 +15,7 @@ public class Car {
     public Car(String name, int speed) {
         this.NAME = name;
         this.SPEED = speed;
+        this.km = speed * 24;
     }
 
     public String getNAME() {
