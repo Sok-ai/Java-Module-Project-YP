@@ -23,7 +23,7 @@ public class Race {
             winner = (winner.getKm() > car.getKm()) ? winner : car;
         }
 
-        countResults(cars);
+        outputWinner(winner);
     }
 
     private static boolean checkCorrectName(String name) {
@@ -31,7 +31,7 @@ public class Race {
     }
 
     private static boolean checkCorrectSpeed(int speed) {
-        return speed < 0 || speed > 250;
+        return speed < MIN_SPEED || speed > MAX_SPEED;
     }
 
     private static String requestName() {
@@ -78,6 +78,7 @@ public class Race {
 
     private static void outputWinner(Car car) {
         System.out.println("-------------------");
-        System.out.printf("Самый лучший и быстрый автомобиль: %s", winner.getName());
+        System.out.printf("Самый лучший и быстрый автомобиль: %s", car.getNAME());
+        SCANNER.close();
     }
 }
